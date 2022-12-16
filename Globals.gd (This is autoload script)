@@ -1,0 +1,14 @@
+extends Node
+
+const UNIT_SIZE = 26
+
+signal refill_health
+signal player_died
+signal hit_checkpoint(checkpoint_position)
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func _physics_process(_delta): #ESC to close game
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
